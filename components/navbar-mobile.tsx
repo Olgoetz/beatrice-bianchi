@@ -15,7 +15,7 @@ interface MobileMenuProps {
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   return (
     <>
-      <div className="absolute inset-0 flex flex-col md:flex-row justify-center gap-2 md:gap-8 items-center py-10 text-white ">
+      <div className="absolute inset-0 max-w-xs mx-auto flex flex-col md:flex-row justify-center gap-2 md:gap-8 items-center py-10 text-white ">
         <div className="flex items-center gap-4">
           <MailIcon size={20} />
           hello@xyc.it

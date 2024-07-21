@@ -6,6 +6,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import MobileMenu from "./navbar-mobile"; // Import the MobileMenu component
 import { Bars3Icon } from "@heroicons/react/24/outline"; // Ensure @heroicons/react is installed
+import debounce from "debounce";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -27,7 +28,7 @@ const Navbar = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlNavbar);
+      window.addEventListener("scroll", debounce(controlNavbar, 100));
 
       // Cleanup function to remove the event listener
       return () => {
