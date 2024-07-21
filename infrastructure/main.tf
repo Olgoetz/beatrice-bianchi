@@ -12,15 +12,8 @@ terraform {
   }
 }
 
-resource "github_branch" "staging" {
-  repository = github_repository.this.name
-  branch     = "staging"
-}
 
-resource "github_branch_default" "default" {
-  repository = github_repository.this.name
-  branch     = github_branch.staging.branch
-}
+
 
 resource "github_branch" "production" {
   repository = github_repository.this.name
