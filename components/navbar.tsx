@@ -46,7 +46,7 @@ const Navbar = () => {
       )}
     >
       <h1 className="text-xl font-bold">Logo</h1>
-      <div className=" mx-auto flex flex-col md:flex-row justify-center gap-2 md:gap-8 items-center py-10 text-white ">
+      <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-8 items-center  text-white ">
         <div className="flex items-center gap-4">
           <MailIcon size={20} />
           hello@xyc.it
