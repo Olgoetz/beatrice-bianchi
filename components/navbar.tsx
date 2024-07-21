@@ -25,7 +25,7 @@ const Navbar = () => {
       }
       setLastScrollY(window.scrollY);
     }
-  }, 200);
+  }, 100);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
