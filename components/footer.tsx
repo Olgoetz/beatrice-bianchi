@@ -27,18 +27,20 @@ const Footer = () => {
             123456789
           </div>
         </div>
-        <div className="flex justify-center items-center space-x-6 text-white py-8">
+        <div className="flex flex-col  justify-center items-center space-y-6 text-white py-8">
+          <div className="flex items-center gap-4">
+            <Link href={""} className="hover:underline">
+              Protezione dati
+            </Link>
+
+            <Link href={""} className="hover:underline">
+              Impronta
+            </Link>
+          </div>
           <div className="flex items-center">
             <Copyright size={20} className="mr-1" />
             <p>2024 Beatrice Bianchi</p>
           </div>
-          <Link href={""} className="hover:underline">
-            Protezione dati
-          </Link>
-
-          <Link href={""} className="hover:underline">
-            Impronta
-          </Link>
         </div>
       </div>
     </footer>
