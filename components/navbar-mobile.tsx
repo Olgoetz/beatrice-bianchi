@@ -15,16 +15,6 @@ interface MobileMenuProps {
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   return (
     <>
-      <div className="absolute inset-0 max-w-xs mx-auto flex flex-col md:flex-row justify-center gap-2 md:gap-8 items-center py-10 text-white ">
-        <div className="flex items-center gap-4">
-          <MailIcon size={20} />
-          hello@xyc.it
-        </div>
-        <div className="flex items-center gap-4">
-          <Phone size={20} />
-          123456789
-        </div>
-      </div>
       <div
         className={`fixed inset-0 bg-pink-400 flex flex-col items-center justify-center space-y-4 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-y-0" : "-translate-y-full"

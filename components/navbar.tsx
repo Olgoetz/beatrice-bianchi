@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import MobileMenu from "./navbar-mobile"; // Import the MobileMenu component
 import { Bars3Icon } from "@heroicons/react/24/outline"; // Ensure @heroicons/react is installed
 import debounce from "debounce";
+import { MailIcon, Phone } from "lucide-react";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -28,7 +29,7 @@ const Navbar = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.addEventListener("scroll", debounce(controlNavbar, 100));
+      window.addEventListener("scroll", controlNavbar);
 
       // Cleanup function to remove the event listener
       return () => {
@@ -45,6 +46,16 @@ const Navbar = () => {
       )}
     >
       <h1 className="text-xl font-bold">Logo</h1>
+      <div className=" mx-auto flex flex-col md:flex-row justify-center gap-2 md:gap-8 items-center py-10 text-white ">
+        <div className="flex items-center gap-4">
+          <MailIcon size={20} />
+          hello@xyc.it
+        </div>
+        <div className="flex items-center gap-4">
+          <Phone size={20} />
+          123456789
+        </div>
+      </div>
       <div className="flex items-center md:hidden">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
