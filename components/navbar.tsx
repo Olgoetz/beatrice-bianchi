@@ -6,7 +6,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import MobileMenu from "./navbar-mobile"; // Import the MobileMenu component
 import { Bars3Icon } from "@heroicons/react/24/outline"; // Ensure @heroicons/react is installed
-import debounce from "debounce";
+import { useDebouncedCallback } from "use-debounce";
 import { MailIcon, Phone } from "lucide-react";
 
 const Navbar = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const controlNavbar = () => {
+  const controlNavbar = useDebouncedCallback(() => {
     if (typeof window !== "undefined") {
       if (window.scrollY > lastScrollY) {
         // Scrolling down
@@ -25,7 +25,7 @@ const Navbar = () => {
       }
       setLastScrollY(window.scrollY);
     }
-  };
+  }, 200);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
